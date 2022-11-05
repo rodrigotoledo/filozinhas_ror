@@ -72,7 +72,7 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
-  Rails.application.routes.default_url_options[:host] = 'https://91ab-177-185-118-149.sa.ngrok.io'
+  Rails.application.routes.default_url_options[:host] = 'https://c32c-45-70-35-23.sa.ngrok.io'
   # Rails.application.routes.default_url_options[:host] = 'https://filozinhas-ror.herokuapp.com'
   config.hosts << /.*\.ngrok\.io/
 end
