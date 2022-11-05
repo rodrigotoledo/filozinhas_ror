@@ -7,6 +7,10 @@ class Api::CategoriesController < ApplicationController
     @categories = Category.all
   end
 
+  def featured
+    @categories = Category.featureds
+  end
+
   # GET /categories/1 or /categories/1.json
   def show
   end
@@ -14,6 +18,6 @@ class Api::CategoriesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_category
-      @category = Category.find(params[:id])
+      @category = Category.friendly.find(params[:id])
     end
 end

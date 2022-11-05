@@ -3,10 +3,14 @@
 Rails.application.routes.draw do
   resources :products
   namespace :api do
-    resources :categories, only: [:index, :show]
+    resources :categories, only: [:index, :show] do
+      collection do
+        get :featured
+      end
+    end
     resources :products, only: [:index, :show] do
       collection do
-        get :with_discount
+        get :with_discount, :by_category
       end
     end
   end

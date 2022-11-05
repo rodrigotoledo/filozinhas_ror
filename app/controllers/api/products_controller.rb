@@ -12,6 +12,10 @@ class Api::ProductsController < ApplicationController
     @products = Product.with_discount
   end
 
+  def by_category
+    @category = Category.friendly.find(params[:category_id])
+  end
+
   # GET /products/1 or /products/1.json
   def show
   end
@@ -19,6 +23,6 @@ class Api::ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find(params[:id])
+      @product = Product.friendly.find(params[:id])
     end
 end

@@ -17,6 +17,15 @@
   </div>
 
   <div class="my-5">
+    <%= form.label :featured %>
+    <%= form.check_box :featured %>
+  </div>
+
+  <p class="my-5">
+    <%= image_tag url_for(category.image.variant(resize_to_limit: [100, 100])) if category.image.attached? %>
+  </p>
+
+  <div class="my-5">
     <%= form.label :image %>
     <%= form.file_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>

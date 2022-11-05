@@ -21,6 +21,10 @@
     <%= form.text_field :title, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
   </div>
 
+  <p class="my-5">
+    <%= image_tag url_for(product.image.variant(resize_to_limit: [100, 100])) if product.image.attached? %>
+  </p>
+
   <div class="my-5">
     <%= form.label :image %>
     <%= form.file_field :image, class: "block shadow rounded-md border border-gray-200 outline-none px-3 py-2 mt-2 w-full" %>
