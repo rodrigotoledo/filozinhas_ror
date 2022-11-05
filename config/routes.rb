@@ -1,8 +1,14 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :products
   namespace :api do
     resources :categories, only: [:index, :show]
+    resources :products, only: [:index, :show] do
+      collection do
+        get :with_discount
+      end
+    end
   end
   resources :categories
   post '/', to: 'welcome#search', as: :search
