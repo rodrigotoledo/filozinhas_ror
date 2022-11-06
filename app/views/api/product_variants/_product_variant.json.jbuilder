@@ -1,0 +1,1 @@
+json.extract! product_variant, :id, :product_id, :label, :variant
