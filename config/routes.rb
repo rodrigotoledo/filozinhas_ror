@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  resources :product_variants
   resources :products
   namespace :api do
     resources :categories, only: [:index, :show] do
@@ -15,10 +17,9 @@ Rails.application.routes.draw do
     end
   end
   resources :categories
-  post '/', to: 'welcome#search', as: :search
-  root to: 'categories#index'
+  root to: 'welcome#index'
   get 'welcome/index'
-  get 'welcome/search'
+  get 'welcome/search', as: :search
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

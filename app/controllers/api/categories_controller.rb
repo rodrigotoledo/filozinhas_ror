@@ -1,5 +1,4 @@
 class Api::CategoriesController < ApplicationController
-  skip_before_action :authenticate_user!
   before_action :set_category, only: %i[ show edit update destroy ]
 
   # GET /categories or /categories.json
