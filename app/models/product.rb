@@ -3,6 +3,7 @@ class Product < ApplicationRecord
   friendly_id :title, use: :slugged
   scope :with_discount, -> { where.not(promotional_price: nil) }
   belongs_to :category
+  has_many :product_variants, dependent: :destroy
   has_one_attached :image
   has_many :product_variants, dependent: :destroy
   validates :title, :description, :price, presence: true
