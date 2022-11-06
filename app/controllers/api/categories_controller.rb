@@ -7,7 +7,7 @@ class Api::CategoriesController < ApplicationController
   end
 
   def featured
-    @categories = Category.featureds
+    @categories = Category.featureds.group(:id)
   end
 
   # GET /categories/1 or /categories/1.json
