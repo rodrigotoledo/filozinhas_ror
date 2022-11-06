@@ -36,3 +36,4 @@
 /tmp
 /coverage
 .env
+node_modules
