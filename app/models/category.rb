@@ -4,5 +4,5 @@ class Category < ApplicationRecord
   scope :featureds, -> { where(featured: true).joins(:products) }
   has_one_attached :image
   has_many :products
-  validates :title, presence: true
+  validates :title, :short_description, presence: true
 end
