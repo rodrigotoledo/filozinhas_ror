@@ -38,7 +38,7 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :amazon
+  config.active_storage.service = :local
   config.active_storage.variant_processor = :mini_magick
 
   # Don't care if the mailer can't send.
@@ -72,7 +72,7 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
-  Rails.application.routes.default_url_options[:host] = 'https://17db-45-70-35-23.sa.ngrok.io'
+  Rails.application.routes.default_url_options[:host] = 'https://2c22-45-70-33-56.sa.ngrok.io'
   # Rails.application.routes.default_url_options[:host] = 'https://filozinhas-ror.herokuapp.com'
   config.hosts << /.*\.ngrok\.io/
 end
