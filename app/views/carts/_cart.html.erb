@@ -1,0 +1,47 @@
+<div id="<%= dom_id cart %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">User:</strong>
+    <%= cart.user_id %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Delivery mode:</strong>
+    <%= cart.delivery_mode %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Status:</strong>
+    <%= cart.status %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Address:</strong>
+    <%= cart.address %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Responsibles:</strong>
+    <%= cart.responsibles %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Additional info:</strong>
+    <%= cart.additional_info %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Receive at start:</strong>
+    <%= cart.receive_at_start %>
+  </p>
+
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Receive at end:</strong>
+    <%= cart.receive_at_end %>
+  </p>
+
+  <% if action_name != "show" %>
+    <%= link_to "Show this cart", cart, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+    <%= link_to 'Edit this cart', edit_cart_path(cart), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
