@@ -12,6 +12,8 @@ module Api
     # GET /carts/1 or /carts/1.json
     def show; end
 
+    def current; end
+
     # GET /carts/new
     def new
       @cart = current_user.carts.build
