@@ -6,7 +6,7 @@ module Api
 
     # GET /cart_items or /cart_items.json
     def index
-      @cart_items = current_user.cart_items
+      @cart_items = current_cart.cart_items
     end
 
     # GET /cart_items/1 or /cart_items/1.json
@@ -14,7 +14,7 @@ module Api
 
     # GET /cart_items/new
     def new
-      @cart_item = current_user.cart_item.build
+      @cart_item = current_cart.cart_item.build
     end
 
     # GET /cart_items/1/edit
@@ -22,7 +22,7 @@ module Api
 
     # POST /cart_items or /cart_items.json
     def create
-      @cart_item = current_user.cart_items.build(cart_item_params)
+      @cart_item = current_cart.cart_items.build(cart_item_params)
 
       if @cart_item.save
         render status: :created, json: @cart_item
@@ -50,7 +50,7 @@ module Api
 
     # Use callbacks to share common setup or constraints between actions.
     def set_cart_item
-      @cart_item = current_user.cart_items.find(params[:id])
+      @cart_item = current_cart.cart_items.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
