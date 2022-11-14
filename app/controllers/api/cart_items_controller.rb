@@ -24,8 +24,13 @@ module Api
     def create
       @cart_item = current_cart.cart_items.build(cart_item_params)
 
+      # return head :no_content if @cart_item.product_variant_quantity <= 0 && @current_cart.quantity.zero?
+
       if @cart_item.save
-        render status: :created, json: @cart_item
+        response = { cart: @cart_item.cart.as_json, quantity: @cart_item.cart.quantity,
+                     amount: @cart_item.cart.amount }
+
+        render status: :created, json: response
       else
         render json: @cart_item.errors, status: :unprocessable_entity
       end
@@ -55,7 +60,7 @@ module Api
 
     # Only allow a list of trusted parameters through.
     def cart_item_params
-      params.require(:cart_item).permit(:cart_id, :product_id, :product_variant_id, :product_variant_quantity)
+      params.require(:cart_item).permit(:product_id, :product_variant_id, :product_variant_quantity)
     end
   end
 end

@@ -12,7 +12,15 @@ module Api
     # GET /carts/1 or /carts/1.json
     def show; end
 
-    def current; end
+    # GET /carts/current or /carts/current
+    def current
+      if current_cart.cart_items.blank?
+        head :no_content
+      else
+        render json: { cart: current_cart.as_json, quantity: current_cart.quantity,
+                       amount: current_cart.amount }, status: :ok
+      end
+    end
 
     # GET /carts/new
     def new
