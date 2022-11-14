@@ -7,6 +7,6 @@ class CartItem < ApplicationRecord
   protected
 
   def set_amount
-    self.amount = product_variant_quantity <= 0 ? (product.final_price * -1) : product.final_price
+    self.amount = product.final_price
   end
 end

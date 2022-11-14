@@ -10,8 +10,4 @@ class Cart < ApplicationRecord
   def quantity
     @quantity ||= cart_items.sum(:product_variant_quantity)
   end
-
-  def amount
-    @amount ||= ActionController::Base.helpers.number_to_currency(cart_items.sum(:amount))
-  end
 end

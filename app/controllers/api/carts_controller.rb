@@ -17,8 +17,8 @@ module Api
       if current_cart.cart_items.blank?
         head :no_content
       else
-        render json: { cart: current_cart.as_json, quantity: current_cart.quantity,
-                       amount: current_cart.amount }, status: :ok
+        render json: { cart: current_cart.as_json, quantity: current_cart.cart_items.count,
+                       amount: ActionController::Base.helpers.number_to_currency(current_cart.cart_items.sum(:amount)) }, status: :ok
       end
     end
 

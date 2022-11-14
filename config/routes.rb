@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   resources :product_variants
   resources :products
   namespace :api do
-    resources :cart_items
+    resources :cart_items do
+      collection do
+        post :downgrade, :upgrade
+      end
+    end
     resources :carts do
       collection do
         get :current
