@@ -415,6 +415,7 @@ DEPENDENCIES
   jbuilder
   mini_magick (~> 4.5, >= 4.5.1)
   pg
+  pry (~> 0.14.1)
   puma (~> 5.0)
   rails (~> 7.0.4)
   rails-controller-testing

@@ -1,7 +1,13 @@
+# frozen_string_literal: true
+
 class Cart < ApplicationRecord
   belongs_to :user
   has_many :cart_items, dependent: :destroy
-  enum status: %i[incomplete waiting_payment on_delivery]
-  enum delivery_mode: %i[pick_on_store delivery_in_city shipping]
-  enum delivery_status: %i[waiting_client with_client returned]
+  enum status: { incomplete: 0, waiting_payment: 1, on_delivery: 2 }
+  enum delivery_mode: { pick_on_store: 0, delivery_in_city: 1, shipping: 2 }
+  enum delivery_status: { waiting_client: 0, with_client: 1, returned: 2 }
+
+  def quantity
+    @quantity ||= cart_items.sum(:product_variant_quantity)
+  end
 end
