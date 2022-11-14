@@ -101,3 +101,5 @@ gem 'friendly_id', '~> 5.4.0'
 gem "aws-sdk-s3", require: false
 gem "rails_admin", "~> 3.0"
 gem "sassc-rails"
+
+gem "pry", "~> 0.14.1"

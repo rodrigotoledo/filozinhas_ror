@@ -7,4 +7,8 @@ class Product < ApplicationRecord
   has_many :product_images, dependent: :destroy
   has_one_attached :image
   validates :title, :description, :price, presence: true
+
+  def final_price
+    @final_price ||= (promotional_price || price)
+  end
 end

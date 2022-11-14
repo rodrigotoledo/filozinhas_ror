@@ -1,14 +1,20 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-
-
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :product_variants
   resources :products
   namespace :api do
-    resources :cart_items
-    resources :carts
+    resources :cart_items do
+      collection do
+        post :downgrade, :upgrade
+      end
+    end
+    resources :carts do
+      collection do
+        get :current
+      end
+    end
     resources :categories, only: %i[index show] do
       collection do
         get :featured
