@@ -74,8 +74,8 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
   # Rails.application.routes.default_url_options[:host] = 'http://rtoledo.myddns.me'
   Rails.application.routes.default_url_options[:host] = 'http://170.244.12.51:3000'
-  # config.hosts << 'http://170.244.12.51:3000'
-  config.hosts << 'https://filozinhas-ror.herokuapp.com'
+  config.hosts << 'http://170.244.12.51:3000'
+  # config.hosts << 'https://filozinhas-ror.herokuapp.com'
   # Rails.application.routes.default_url_options[:host] = 'https://filozinhas-ror.herokuapp.com'
   # config.hosts << /.*\.ngrok\.io/
 end
