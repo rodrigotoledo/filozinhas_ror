@@ -8,6 +8,8 @@ ruby '3.1.2'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.4'
 
+gem 'rack-cors'
+
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
@@ -91,15 +93,15 @@ group :development, :test do
   gem 'rufo'
   gem 'simplecov', require: false
 end
+gem 'aws-sdk-s3', require: false
 gem 'devise'
 gem 'dotenv-rails'
 gem 'faker'
+gem 'friendly_id', '~> 5.4.0'
 gem 'pg'
+gem 'rails_admin', '~> 3.0'
 gem 'rails_heroicon'
 gem 'redis'
-gem 'friendly_id', '~> 5.4.0'
-gem "aws-sdk-s3", require: false
-gem "rails_admin", "~> 3.0"
-gem "sassc-rails"
+gem 'sassc-rails'
 
-gem "pry", "~> 0.14.1"
+gem 'pry', '~> 0.14.1'

@@ -73,9 +73,11 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
   # Rails.application.routes.default_url_options[:host] = 'http://rtoledo.myddns.me'
+  Rails.application.routes.default_url_options[:host] = 'https://168c-170-244-12-51.sa.ngrok.io'
   Rails.application.routes.default_url_options[:host] = 'http://170.244.12.51:3000'
   config.hosts << 'http://170.244.12.51:3000'
+  # config.hosts << 'https://168c-170-244-12-51.sa.ngrok.io'
   # config.hosts << 'https://filozinhas-ror.herokuapp.com'
   # Rails.application.routes.default_url_options[:host] = 'https://filozinhas-ror.herokuapp.com'
-  # config.hosts << /.*\.ngrok\.io/
+  config.hosts << /.*\.ngrok\.io/
 end
