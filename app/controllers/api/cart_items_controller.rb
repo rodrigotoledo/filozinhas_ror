@@ -2,6 +2,7 @@
 
 module Api
   class CartItemsController < ApplicationController
+    before_action :authenticate_user!
     include CartWithItems
     # GET /cart_items or /cart_items.json
     def index

@@ -7,10 +7,6 @@ module Api
 
     protected
 
-    def current_user
-      @current_user ||= User.first
-    end
-
     def current_cart
       @current_cart ||= current_user.current_cart
     end

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :product_variants
   resources :products
   namespace :api do
+    post '/signin', to: 'users#signin', as: :signin
     get '/', to: 'general#index', as: :general_data
     resources :cart_items do
       collection do
